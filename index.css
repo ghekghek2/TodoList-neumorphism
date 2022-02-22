@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300,500,600,700,800&family=Poppins:wght@900&display=swap");
+:root {
+  --step--2: clamp(0.91rem, 0.89rem + 0.10vw, 0.96rem);
+  --step--1: clamp(1.09rem, 1.05rem + 0.21vw, 1.20rem);
+  --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.50rem);
+  --step-1: clamp(1.58rem, 1.46rem + 0.59vw, 1.88rem);
+  --step-2: clamp(1.89rem, 1.71rem + 0.89vw, 2.34rem);
+  --step-3: clamp(2.27rem, 2.01rem + 1.29vw, 2.93rem);
+  --step-4: clamp(2.72rem, 2.36rem + 1.83vw, 3.66rem);
+  --step-5: clamp(3.27rem, 2.75rem + 2.56vw, 4.58rem);
+}
+
+body {
+  background-color: #e0e0e0;
+  color: #474747;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.inset {
+  -webkit-box-shadow: -5px -5px 9px #cacaca, 5px 5px 9px #f6f6f6;
+          box-shadow: -5px -5px 9px #cacaca, 5px 5px 9px #f6f6f6;
+  background: #e0e0e0;
+  border: 0;
+  padding: 1rem  2rem;
+  border-radius: 1rem;
+  color: #474747;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.inset:focus, .set:focus {
+  outline: none;
+}
+
+.hov:hover {
+  -webkit-box-shadow: inset 5px 5px 10px #949494, inset -5px -5px 10px #ffffff;
+          box-shadow: inset 5px 5px 10px #949494, inset -5px -5px 10px #ffffff;
+  color: #211e31;
+}
+
+.container::before {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: #e0e0e0;
+  -webkit-box-shadow: 5px -5px 7px #bcbcbc, -5px 5px 7px #ffffff;
+          box-shadow: 5px -5px 7px #bcbcbc, -5px 5px 7px #ffffff;
+  border-radius: 50%;
+  top: -150px;
+  left: -100px;
+  z-index: -2;
+}
+
+.container::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  background: #e0e0e0;
+  -webkit-box-shadow: inset 5px 5px 10px #c3c3c3, inset -5px -5px 10px #fdfdfd;
+          box-shadow: inset 5px 5px 10px #c3c3c3, inset -5px -5px 10px #fdfdfd;
+  border-radius: 50%;
+  bottom: -90px;
+  right: -100px;
+  z-index: -2;
+}
+
+.container {
+  margin-top: 5%;
+  z-index: 3;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  z-index: 4;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-bottom: 1rem;
+  width: 95%;
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #d8d6d6;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #f8d7d7;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #bdf7d5;
+  color: #211e31;
+  text-decoration: line-through;
+  text-align: right;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #211e31;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 18px;
+  left: 16px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: -60px;
+  top: 4px;
+  padding: 12px 16px 12px 16px;
+  border-radius: 50%;
+  -webkit-box-shadow: -5px -5px 10px #9f9f9f, 5px 5px 10px #ffffff;
+          box-shadow: -5px -5px 10px #9f9f9f, 5px 5px 10px #ffffff;
+}
+
+.close:hover {
+  background: #ff9d9d;
+  color: #211e31;
+}
+
+/* Style the header */
+.header {
+  background-color: #e0e0e0;
+  padding: 30px 0;
+  color: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 2rem;
+  -webkit-box-shadow: -5px -5px 10px #9f9f9f, 5px 5px 10px #ffffff;
+          box-shadow: -5px -5px 10px #9f9f9f, 5px 5px 10px #ffffff;
+  color: #474747;
+}
+
+.addBtn:hover {
+  background: #bdf7d5;
+  color: #211e31;
+}
+
+.set {
+  background: #E0E0E0;
+  -webkit-box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+          box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  color: #211e31;
+  border-radius: 1rem;
+  padding: 1rem  2rem;
+  width: 90%;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.row {
+  width: 90%;
+  margin-inline: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 95%;
+  }
+  .row {
+    width: 90%;
+  }
+  .addBtn {
+    width: 70px;
+    height: 70px;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .addBtn {
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+  }
+  .set {
+    width: 180px;
+  }
+  .col {
+    padding: 0;
+  }
+  .row {
+    margin-left: -10px;
+  }
+  .set {
+    margin-left: 50px;
+  }
+}
+/*# sourceMappingURL=index.css.map */
